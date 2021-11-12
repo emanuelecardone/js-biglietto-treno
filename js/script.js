@@ -26,11 +26,10 @@ let travelPrice = numKm * 0.21;
 // Applico eventuali sconti
 if(userAge < 18){
     travelPrice = travelPrice - (travelPrice / 100 * 20);
-    console.log(travelPrice);
-} else if(userAge > 65){
+} else if(userAge >= 65){
     travelPrice = travelPrice - (travelPrice / 100 * 40);
-    console.log(travelPrice);
 }
+console.log(travelPrice);
 
 // Output con massimo 2 cifre decimali
 document.getElementById('ticket-price').innerHTML = travelPrice.toFixed(2);
