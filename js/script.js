@@ -11,18 +11,22 @@
 
 // SOLUZIONE
 
-// Dichiaro prima tutte le variabili che entrano in gioco
-const numKm;
-const userAge;
-const travelPrice;
-const finalMessage
 
 // Chiedo all'utente il numero di chilometri che vuole percorrere
+const numKm = parseInt(prompt(`Quanti chilometri vuole percorrere?`));
 
 // Chiedo all'utente l'età del passeggero
+ const userAge = parseInt(prompt(`Qual è l'età del passeggero?`));
 
 // Definisco il prezzo del biglietto
+let travelPrice = numKm * 0.21;
 
 // Applico eventuali sconti
+if(userAge < 18){
+    travelPrice = travelPrice - (travelPrice / 100 * 20);
+} else if(userAge > 65){
+    travelPrice = travelPrice - (travelPrice / 100 * 40);
+}
 
 // Output con massimo 2 cifre decimali
+console.log(travelPrice.toFixed(2));
